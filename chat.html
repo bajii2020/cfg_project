@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Subscription Page{% endblock %}
+{% block content %}
+
+<div class="container">
+<div id="wrapper">
+            <div id="menu">
+                <p class="welcome">Welcome to your community chat, <b></b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            </div>
+            <div id="chatbox"></div>
+
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+<a href="/subscription" class="btn btn-primary">Go back</a>
+        </div>
+</div>
+{% endblock %}

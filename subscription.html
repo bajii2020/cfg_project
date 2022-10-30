@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Subscription Page{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Overview of favourite team</h5>
+        <p class="card-text">View your team's information and more here</p>
+        <a href="#" class="btn btn-primary">Read more</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Stats and notifications</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container" align="right">
+<div id="wrapper">
+            <div id="menu">
+                <p class="welcome">Welcome, <b></b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            </div>
+            <div id="chatbox"></div>
+
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+
+        </div>
+</div>
+
+<div class="container">
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Confirm email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Accept terms</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Subscribe</button>
+</form>
+</div>
+
+{% endblock %}
