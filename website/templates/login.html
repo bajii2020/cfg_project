@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock%}
+
+{% block main %}
+
+<style>
+
+    .form-group {
+    max-width: 500px;
+    margin: auto;
+    }
+</style>
+    <form method="POST">
+        <h3 align="center">Login</h3>
+        <div class="form-group">
+            <label for="email"><h5>Email Address:</h5></label>
+            <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter Email"/>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="password"><h5>Password:</h5></label>
+            <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter Password"/>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <p>Don't have an account? <a href="/sign-up">Sign Up</a></p>
+        <br>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+
+
+    </form>
+
+{% endblock main %}
+

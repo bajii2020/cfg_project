@@ -1,22 +1,24 @@
-"""
-imports
-"""
+# """
+# imports
+# """
 from website import create_app
 
 
-"""
-initialise
-"""
+# """
+# initialise
+# """
+
 app = create_app()
 
 
-"""
-endpoints
-"""
+# """
+# endpoints
+# """
 
 
-"""
-Run Flask
-"""
+# """
+# Run Flask
+# # """
+
 if __name__ == '__main__':
     app.run(debug=True)
