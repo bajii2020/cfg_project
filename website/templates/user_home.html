@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock %}
+
+{% block main %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+  html {
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  body {
+    background: #fdfdf5;
+    margin: 30px 50px;
+    line-height: 1.4;
+  }
+
+
+  .wrapper {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: 30%, 60%;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .wrapper > * {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  #one {
+    background-color: rgb(211, 210, 210);
+  }
+
+  #user_photo {
+    border-radius: 20px;
+  }
+
+  #user_image {
+    border-radius: 20px;
+  }
+
+  #user_info {
+        background-color: rgb(211, 210, 210);
+        padding: 20px;
+        text-align: center;
+        border-radius: 20px;
+  }
+
+  #two {
+    background-color: rgb(211, 210, 210);
+  }
+
+  #three {
+    background-color: rgb(211, 210, 210);
+  }
+
+  #four {
+    background-color: rgb(211, 210, 210);
+  }
+
+</style>
+
+<div class="wrapper">
+
+    <div id="one">
+        <div id="user_photo" alt="user picture"><img id="user_image" src="website/templates/images/profile_placeholder.jpg"></div>
+        <div id="user_info"><h1>Welcome Back, Username!<br></h1><br>Location: London<br>Fav Team: Arsenal</div>
+    </div>
+
+    <div id="three"><h3>Team Stats</h3>
+        <div id="team_summary">
+            <div class="team_results"><p>Next Game</p></div>
+            <div class="team_results"><p>Table Position</p></div>
+            <div class="team_results"><p>Injuries/Suspensions</p></div>
+        </div>
+
+    </div>
+
+
+    <div id="four"><h3>Whats On Your Mind?</h3></div>
+</div>
+
+
+{% endblock main %}
