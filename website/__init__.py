@@ -39,6 +39,7 @@ def create_app():
 
     return app
 
+app = Flask(__name__, static_url_path='/static')
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
