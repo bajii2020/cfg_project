@@ -32,7 +32,6 @@ def get_team_by_name(name):
 @app.route('/table')
 def table_result():
     results = table_result()
-    # #table = table_result()
     return jsonify(results)
 
 
