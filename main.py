@@ -1,11 +1,11 @@
 """
 IMPORTS
 """
-from website import create_app
+from website.app import create_app
 from flask import Flask, jsonify, request
 # from test_data import teams
 # from team import search_team
-from client_main import get_team, table_result, get_lineups, match_result
+from client_main import get_team, table_result, get_lineups, match_result, display_table
 
 """
 APP INIT
@@ -30,9 +30,12 @@ def get_team_by_name(name):
 
 
 @app.route('/table')
-def table_result():
-    results = table_result()
-    return jsonify(results)
+# def table_result():
+#     results = table_result()
+#     return jsonify(results)
+def table():
+    result = display_table()
+    return jsonify(result)
 
 
 @app.route('/formations/<string:team1><string:team2>')
@@ -45,6 +48,8 @@ def get_lineups(team1, team2):
 def matchday(matchdayid):
     matchday_res = match_result(matchdayid)
     return jsonify(matchday_res)
+
+
 
 
 """
