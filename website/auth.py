@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, url_for, redirect
 from .models import User
-from website import db
+from website.app import db
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 
@@ -41,7 +41,7 @@ def sign_up():
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
         username = request.form.get('username')
-        fav_team = request.form.get('fav_tea,')
+        fav_team = request.form.get('fav_team')
         email = request.form.get('email')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')

@@ -1,6 +1,29 @@
 import requests
 import json
 
+import lxml
+import requests
+from bs4 import BeautifulSoup
+import re
+import time
+from pprint import pprint
+
+baselink = f"https://onefootball.com/en/competition/premier-league-9/table"
+endpoint  = 'table'
+
+def display_table():
+    source = requests.get(baselink+endpoint).text
+    page = BeautifulSoup(source, "lxml")
+    tab = page.find_all("a", class_="standings__row-grid")
+    table = []
+    table.append("  _____TEAM_______ PL W D L GD PTS")
+
+    for i in range(len(tab)):
+        table.append(tab[i].text.strip())
+        # pprint(table)
+
+    return table
+
 # https://rapidapi.com/heisenbug/api/premier-league-live-scores/details
 baseurl = "https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/"
 
