@@ -1,8 +1,23 @@
 Immport request 
 import lxml
 import requests
-from bs4 import BeautifulSoup
-import re
 import time
 import flask
 import jsonify
+import jinja
+import bootstrap, 
+import Blueprint, 
+import render_template, 
+import flash, url_for, 
+import redirect, 
+import SQLAlchemy, 
+import func, 
+import LoginManager,  
+import login_user, 
+import login_required, 
+import logout_user, 
+import current_user, 
+import UserMixin, 
+import path,
+import check_password_hash, 
+import generate_password_hash. 
