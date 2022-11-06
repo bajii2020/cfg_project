@@ -10,8 +10,8 @@ from client_main import get_team, table_result, get_lineups, match_result, displ
 """
 APP INIT
 """
-#app = create_app()
-app = Flask(__name__)
+app = create_app()
+#app = Flask(__name__)
 
 """
 ENDPOINTS

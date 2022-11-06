@@ -1,15 +1,14 @@
 import requests
 import json
 import lxml
-import requests
 from bs4 import BeautifulSoup
 import re
 import time
 from pprint import pprint
 import flask_marshmallow
 
-# https://rapidapi.com/heisenbug/api/premier-league-live-scores/details
-baseurl = "https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/"
+baseurl =  "https://rapidapi.com/heisenbug/api/premier-league-live-scores/details"
+# baseurl = "https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/"
 
 headers = {
     "X-RapidAPI-Key": "0546136983mshf1b2571a6e03047p1d321bjsn62ce1e5f9762",
