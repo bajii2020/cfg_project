@@ -1,5 +1,12 @@
 import requests
 import json
+import lxml
+import requests
+from bs4 import BeautifulSoup
+import re
+import time
+from pprint import pprint
+import flask_marshmallow
 
 # https://rapidapi.com/heisenbug/api/premier-league-live-scores/details
 baseurl = "https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/"
@@ -8,6 +15,9 @@ headers = {
     "X-RapidAPI-Key": "0546136983mshf1b2571a6e03047p1d321bjsn62ce1e5f9762",
     "X-RapidAPI-Host": "heisenbug-premier-league-live-scores-v1.p.rapidapi.com"
 }
+
+
+
 
 # team, takes team name
 def get_team(team_name):
@@ -26,7 +36,10 @@ def table_result():
     endpoint_table = "table"
     response = requests.request("GET", baseurl + endpoint_table, headers=headers)
     data = json.loads(response.text)
-    return data
+    table_res = []
+    for i in range(0, int(len(data['records']))):
+        table_res = data['records'][i]
+    return table_res
 
 
 # lineups, takes two team names
@@ -46,4 +59,16 @@ def match_result(match_day_id):
     return data
 
 
+
+baselink = f"https://onefootball.com/en/competition/premier-league-9/table"
+endpoint = 'table'
+def display_table():
+    source = requests.get(baselink+endpoint).text
+    page = BeautifulSoup(source, "lxml")
+    tab = page.find_all("a", class_="standings__row-grid")
+    table = []
+    table.append("  _____TEAM_______ PL W D L GD PTS")
+    for i in range(len(tab)):
+        table.append(tab[i].text.strip())
+    return table
 

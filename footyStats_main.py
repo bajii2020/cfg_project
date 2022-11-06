@@ -5,13 +5,13 @@ from website import create_app
 from flask import Flask, jsonify, request
 # from test_data import teams
 # from team import search_team
-from client_main import get_team, table_result, get_lineups, match_result
+from client_main import get_team, table_result, get_lineups, match_result, display_table
 
 """
 APP INIT
 """
-app = create_app()
-
+#app = create_app()
+app = Flask(__name__)
 
 """
 ENDPOINTS
@@ -30,15 +30,17 @@ def get_team_by_name(name):
 
 
 @app.route('/table')
-def table_result():
+def table():
     results = table_result()
     return jsonify(results)
-
+# def table():
+#     result = display_table()
+#     return jsonify(result)
 
 @app.route('/formations/<string:team1><string:team2>')
-def get_lineups(team1, team2):
-    lineups = get_lineups(team1, team2)
-    return jsonify(lineups)
+def lineups(team1, team2):
+    lineups_data = get_lineups(team1, team2)
+    return jsonify(lineups_data)
 
 
 @app.route('/matchday/<string:id>')
