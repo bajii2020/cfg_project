@@ -1,27 +1,23 @@
-
 import unittest
 import pytest
+import requests
+import flask
+from website.app import app, create_app
 
 
-from website.app import create_app, app
-from website.app import create_database, db
+@pytest.fixture()
+def runner(app):
+    return app.test_cli_runner()
 
+@pytest.fixture()
+def test_index_route():
+    response = app.test_client().get('/')
+    assert response.status_code == 200
 
-
-# @pytest.fixture()
-# def app():
-#     app = create_app()
-#     app.config.update({
-#         "TESTING": True,
-#     })
-#
-#     yield app
-#
-#
-# @pytest.fixture()
-# def client(app):
-#     return app.test_client()
-
+def test_login_redirect(client):
+    response = client.get("/home")
+    assert len(response.history) == 1
+    assert response.request.path == "/login"
 
 
 class myTestCase(unittest.TestCase):
@@ -55,6 +51,3 @@ class myTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
